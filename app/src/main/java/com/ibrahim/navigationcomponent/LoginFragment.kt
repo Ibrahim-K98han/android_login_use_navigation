@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.navigation.fragment.findNavController
 
 class LoginFragment : Fragment() {
+    private lateinit var nameET:EditText
     private lateinit var emailET:EditText
     private lateinit var passET:EditText
     private lateinit var loginBtn:Button
@@ -23,10 +25,12 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        nameET = view.findViewById(R.id.inputNameET)
         emailET = view.findViewById(R.id.inputEmailET)
         passET = view.findViewById(R.id.inputPasswordET)
         loginBtn = view.findViewById(R.id.loginBtn)
         loginBtn.setOnClickListener {
+            val name = nameET.text.toString()
             val email = emailET.text.toString()
             val password = passET.text.toString()
             if (email.isEmpty()){
@@ -39,7 +43,11 @@ class LoginFragment : Fragment() {
                 emailET.error = getString(R.string.invalid_email)
                 return@setOnClickListener
             }
-
+            val bundle = Bundle().apply {
+                putString("name_value",name)
+                putString("email_value",email)
+            }
+            findNavController().navigate(R.id.login_to_home,bundle)
         }
 
     }
