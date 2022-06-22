@@ -39,6 +39,7 @@ class LoginFragment : Fragment() {
                 emailET.error = getString(R.string.invalid_email)
                 return@setOnClickListener
             }
+
         }
 
     }

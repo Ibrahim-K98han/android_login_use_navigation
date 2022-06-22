@@ -10,4 +10,9 @@
         android:name="com.ibrahim.navigationcomponent.LoginFragment"
         android:label="Login Page"
         tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ibrahim.navigationcomponent.HomeFragment"
+        android:label="Home Page"
+        tools:layout="@layout/fragment_home" />
 </navigation>
