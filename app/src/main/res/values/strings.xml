@@ -5,4 +5,7 @@
     <string name="enter_your_password">Enter Your Password</string>
     <string name="enter_your_email">Enter Your Email</string>
     <string name="login">Login</string>
+    <string name="empty_email">Please Enter your email</string>
+    <string name="empty_password">Please Enter your password</string>
+    <string name="invalid_email">Invalid Email</string>
 </resources>
